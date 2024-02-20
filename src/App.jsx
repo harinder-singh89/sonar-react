@@ -47,7 +47,7 @@ const App = () => {
 				top: "-15%",
 			}}
 		>
-			Counter App
+			Counter App {name}
 			<div
 				style={{
 					fontSize: "120%",
