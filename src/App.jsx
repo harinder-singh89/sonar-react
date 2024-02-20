@@ -8,21 +8,28 @@ import "./App.css";
 const App = () => {
 	// Counter is a state initialized to 0
 	const [counter, setCounter] = useState(0);
+	const [name, setName] = useState('');
 
 	// Function is called everytime increment button is clicked
-	const handleClick1 = () => {
+	const updateName = (name) => {
 		// Counter state is incremented
-		setCounter(counter + 1);
+		if(name){
+      setName('harry singh')
+    }else{
+      setName('harinder singh')
+    }
+    setCounter(counter + 1);
 	};
 
-  const handleClick1 = () => {
-		// Counter state is incremented
-		setCounter(counter + 1);
-	};
 
 	// Function is called everytime decrement button is clicked
-	const handleClick2 = () => {
+	const changeName = (name) => {
 		// Counter state is decremented
+    if(name){
+      setName('harry singh')
+    }else{
+      setName('harinder singh')
+    }
 		setCounter(counter + 1);
 	};
 
@@ -49,6 +56,8 @@ const App = () => {
 				}}
 			>
 				{counter}
+        <button type="button" onClick={() => changeName('Harry')}> Change</button>
+        <button type="button" onClick={() => updateName('Harry')}> Change Name</button>
 			</div>
 			<div className="buttons">
 				<button
