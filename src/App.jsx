@@ -1,37 +1,82 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// Filename - App.js
 
-function App() {
-  const [count, setCount] = useState(0)
+import React, { useState } from "react";
 
-  const myname = "harinder";
+// Importing app.css is css file to add styling
+import "./App.css";
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+const App = () => {
+	// Counter is a state initialized to 0
+	const [counter, setCounter] = useState(0);
 
-export default App
+	// Function is called everytime increment button is clicked
+	const handleClick1 = () => {
+		// Counter state is incremented
+		setCounter(counter + 1);
+	};
+
+	// Function is called everytime decrement button is clicked
+	const handleClick2 = () => {
+		// Counter state is decremented
+		setCounter(counter + 1);
+	};
+
+	return (
+		<div
+			style={{
+				display: "flex",
+				flexDirection: "column",
+				alignItems: "center",
+				justifyContent: "center",
+				fontSize: "300%",
+				position: "absolute",
+				width: "100%",
+				height: "100%",
+				top: "-15%",
+			}}
+		>
+			Counter App
+			<div
+				style={{
+					fontSize: "120%",
+					position: "relative",
+					top: "10vh",
+				}}
+			>
+				{counter}
+			</div>
+			<div className="buttons">
+				<button
+					style={{
+						fontSize: "60%",
+						position: "relative",
+						top: "20vh",
+						marginRight: "5px",
+						backgroundColor: "green",
+						borderRadius: "8%",
+						color: "white",
+					}}
+					onClick={handleClick1}
+				>
+					Increment
+				</button>
+				<button
+					style={{
+						fontSize: "60%",
+						position: "relative",
+						top: "20vh",
+						marginLeft: "5px",
+						backgroundColor: "red",
+						borderRadius: "8%",
+						color: "white",
+					}}
+					onClick={handleClick2}
+				>
+					Decrement
+				</button>
+			</div>
+		</div>
+	);
+};
+
+export default App;
